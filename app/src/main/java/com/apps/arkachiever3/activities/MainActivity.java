@@ -2,11 +2,16 @@
 package com.apps.arkachiever3.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.apps.arkachiever3.DatabaseHelper;
 import com.apps.arkachiever3.R;
@@ -14,14 +19,16 @@ import com.apps.arkachiever3.adapters.MainActivityAdapter;
 import com.apps.arkachiever3.model.Achievement;
 import com.apps.arkachiever3.model.DatabasePopulator;
 import com.apps.arkachiever3.model.Milestone;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity implements MainActivityAdapter.OnItemClickListener {
 
-
+    Toolbar toolbar;
     RecyclerView recyclerView;
     List<Milestone> milestones = new ArrayList<>();
     List<Achievement> achievements = new ArrayList<>();
@@ -34,10 +41,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityAdapt
 
         //Assign Components
         recyclerView = findViewById(R.id.recyclerView);
+        toolbar = findViewById(R.id.toolbar);
 
         DatabaseHelper dbh = new DatabaseHelper(this);
         achievements = dbh.getAchievements();
         populateHashMap();
+
+        toolbar.inflateMenu(R.menu.menu_main);
 
         //Loop finds the current milestone for each achievement
         for (Achievement achievement : achievements) {
@@ -94,6 +104,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityAdapt
         intent.putExtra("achievementID", achievements.get(position).getAchievementID());
         startActivity(intent);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
 
 
 }
