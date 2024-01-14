@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewAchievementActivityPageTwo"
+    android:background="@color/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/gradient_background"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textViewNewAchievement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Achievement Name"
+            android:textColor="@color/textSuperLightGray"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textDarkGray"
+            android:textSize="25sp"
+            android:text="Description"
+            app:layout_constraintTop_toBottomOf="@id/textViewNewAchievement"
+            app:layout_constraintLeft_toLeftOf="@id/textViewNewAchievement"
+            android:layout_marginTop="4dp"
+            android:id="@+id/textViewDescription"/>
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:textColor="@color/textWhite"
+            android:layout_height="180dp"
+            android:gravity="top|start"
+            android:hint="Enter your description here..."
+            android:text="this is a sentence lets see how much of this fits. lmao"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/text_box"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewDescription"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDescription"
+            android:background="@drawable/steam_button"
+            android:layout_marginTop="10dp"
+            android:text="@string/next"
+            android:textColor="@color/textWhite"
+            android:textSize="25sp"
+            android:padding="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
