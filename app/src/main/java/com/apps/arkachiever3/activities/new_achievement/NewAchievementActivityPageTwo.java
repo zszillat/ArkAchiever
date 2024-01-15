@@ -20,7 +20,7 @@ public class NewAchievementActivityPageTwo extends AppCompatActivity {
 
         //Intent
         Intent intent = getIntent();
-        achievementName = intent.getStringExtra("name");
+        achievementName = intent.getStringExtra("achievementName");
 
         //Associate Components
         textViewNewAchievement = this.findViewById(R.id.textViewNewAchievement);
