@@ -16,12 +16,12 @@ public class NewAchievementActivityPageOne extends AppCompatActivity {
 
     Button buttonNext;
     EditText editTextName;
-
     String achievementName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new_a_page_1);
 
         //Assign Components
         buttonNext = this.findViewById(R.id.buttonNext);
